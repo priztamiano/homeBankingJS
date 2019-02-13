@@ -27,7 +27,7 @@ function cambiarLimiteDeExtraccion() {
     var ingresarLimite = prompt("Ingrese su nuevo límite de extracción a continuación.");
     limiteExtraccion = parseInt(ingresarLimite);
 
-    if (ingresarLimite == "" || ingresarLimite == null) {
+    if (ingresarLimite == "" || ingresarLimite == null || ingresarLimite < 0) {
         alert("Por favor, ingrese un monto válido.");
     } else if (isNaN(ingresarLimite)) {
         alert("Por favor, ingrese un monto válido.");
@@ -43,7 +43,7 @@ function extraerDinero() {
     var saldoAnterior = saldoCuenta;
 
     // Verificaciones de extracción
-    if (ingresarExtraccion == "" || ingresarExtraccion == null) {
+    if (ingresarExtraccion == "" || ingresarExtraccion == null || ingresarExtraccion < 0) {
         alert("Por favor, ingrese un monto válido.");
     } else if (isNaN(ingresarExtraccion)) {
         alert("Por favor, ingrese un monto válido.");
@@ -65,10 +65,9 @@ function depositarDinero() {
     var montoDeposito = parseInt(ingresarDeposito);
     var saldoAnterior = saldoCuenta;
 
-    if (ingresarDeposito == "" || ingresarDeposito == null) {
+    if (ingresarDeposito == "" || ingresarDeposito == null || ingresarDeposito < 0) {
         alert("Por favor, ingrese un monto válido.");
-    }
-    else if (isNaN(ingresarDeposito)) {
+    } else if (isNaN(ingresarDeposito)) {
         alert("Por favor, ingrese un monto válido.");
     } else {
         sumarDinero(montoDeposito);
@@ -135,7 +134,7 @@ function transferirDinero() {
     var ingresarTransferencia = prompt("Por favor, ingrese el monto a transferir a continuación.");
     var montoTransferencia = parseInt(ingresarTransferencia);
 
-    if (montoTransferencia == "" || montoTransferencia == null) {
+    if (montoTransferencia == "" || montoTransferencia == null || montoTransferencia < 0) {
         alert("Por favor, ingrese un monto válido.");
     } else if (isNaN(montoTransferencia)) {
         alert("Por favor, ingrese un monto válido.");
